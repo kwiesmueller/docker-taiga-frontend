@@ -1,5 +1,5 @@
 {
-	"api": "https://www.benjamin-borbe.de/taiga/api/v1/",
+	"api": "http://taiga.benjamin-borbe.de/api/v1/",
 	"eventsUrl": null,
 	"eventsMaxMissedHeartbeats": 5,
 	"eventsHeartbeatIntervalTime": 60000,
@@ -10,7 +10,7 @@
 		"taiga"
 	],
 	"defaultTheme": "taiga",
-	"publicRegisterEnabled": true,
+	"publicRegisterEnabled": false,
 	"feedbackEnabled": true,
 	"privacyPolicyUrl": null,
 	"termsOfServiceUrl": null,
