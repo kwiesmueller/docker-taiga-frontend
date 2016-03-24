@@ -7,10 +7,10 @@ RUN set -x \
     && apt-get clean
 
 RUN git clone -b stable --single-branch https://github.com/taigaio/taiga-front-dist.git /taiga
-RUN rm -rf /usr/share/nginx/html
-RUN mv /taiga/dist /usr/share/nginx/html
-RUN rm -rf /taiga /usr/share/nginx/html/conf.example.json
-ADD conf.json /usr/share/nginx/html/conf.json
+RUN rm -f /taiga/dist/conf.example.json
+ADD conf.json /taiga/dist/conf.json
+ADD nginx-default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]
