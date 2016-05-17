@@ -10,7 +10,7 @@
 		"taiga"
 	],
 	"defaultTheme": "taiga",
-	"publicRegisterEnabled": "{{public_register_enabled}}",
+	"publicRegisterEnabled": {{public_register_enabled}},
 	"feedbackEnabled": true,
 	"privacyPolicyUrl": null,
 	"termsOfServiceUrl": null,
