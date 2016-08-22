@@ -2,6 +2,11 @@ FROM nginx
 MAINTAINER Benjamin Borbe <bborbe@rocketnews.de>
 
 RUN set -x \
+	&& DEBIAN_FRONTEND=noninteractive apt-get update --quiet || true \
+	&& DEBIAN_FRONTEND=noninteractive apt-get install --quiet --yes --no-install-recommends wget \
+	&& wget https://nginx.org/keys/nginx_signing.key -O - | apt-key add -
+
+RUN set -x \
 	&& DEBIAN_FRONTEND=noninteractive apt-get update --quiet \
 	&& DEBIAN_FRONTEND=noninteractive apt-get upgrade --quiet --yes \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install --quiet --yes --no-install-recommends git \
