@@ -3,7 +3,7 @@ MAINTAINER Benjamin Borbe <bborbe@rocketnews.de>
 
 RUN set -x \
 	&& DEBIAN_FRONTEND=noninteractive apt-get update --quiet || true \
-	&& DEBIAN_FRONTEND=noninteractive apt-get install --quiet --yes --no-install-recommends wget \
+	&& DEBIAN_FRONTEND=noninteractive apt-get install --quiet --yes --no-install-recommends apt-transport-https ca-certificates wget \
 	&& wget https://nginx.org/keys/nginx_signing.key -O - | apt-key add -
 
 RUN set -x \
