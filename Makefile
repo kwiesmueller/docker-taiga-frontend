@@ -1,16 +1,18 @@
+VERSION ?= 1.0.0
+
 default: build
 
 clean:
-	docker rmi bborbe/taiga-frontend
+	docker rmi bborbe/taiga-frontend:$(VERSION)
 
 build:
-	docker build --no-cache --rm=true -t bborbe/taiga-frontend .
+	docker build --build-arg VERSION=$(VERSION) --no-cache --rm=true -t bborbe/taiga-frontend:$(VERSION) .
 
 run:
-	docker run -h example.com -p 80:80 bborbe/taiga-frontend:latest
+	docker run -h example.com -p 80:80 bborbe/taiga-frontend:$(VERSION)
 
 shell:
-	docker run -i -t bborbe/taiga-frontend:latest /bin/bash
+	docker run -i -t bborbe/taiga-frontend:$(VERSION) /bin/bash
 
 upload:
-	docker push bborbe/taiga-frontend
+	docker push bborbe/taiga-frontend:$(VERSION)
