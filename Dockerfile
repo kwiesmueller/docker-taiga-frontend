@@ -1,5 +1,6 @@
 FROM nginx
 MAINTAINER Benjamin Borbe <bborbe@rocketnews.de>
+ARG VERSION
 
 RUN set -x \
 	&& DEBIAN_FRONTEND=noninteractive apt-get update --quiet || true \
