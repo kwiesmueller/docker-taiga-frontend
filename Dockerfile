@@ -14,7 +14,7 @@ RUN set -x \
 	&& DEBIAN_FRONTEND=noninteractive apt-get autoremove --yes \
 	&& DEBIAN_FRONTEND=noninteractive apt-get clean
 
-RUN git clone -b 1.10.0-stable --single-branch --depth 1 https://github.com/taigaio/taiga-front-dist.git /taiga
+RUN git clone -b 2.1.0-stable --single-branch --depth 1 https://github.com/taigaio/taiga-front-dist.git /taiga
 RUN rm -f /taiga/dist/conf.example.json
 COPY conf.json /taiga/dist/conf.json.template
 COPY nginx-default.conf /etc/nginx/conf.d/default.conf
