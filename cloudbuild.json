@@ -1,0 +1,18 @@
+{
+  "source": {
+    "repoSource": {
+      "projectId": "playnet-gce",
+      "repoName": "docker-taiga-frontend",
+      "branchName": "master"
+    }
+  },
+  "steps": [{
+    "name": "gcr.io/cloud-builders/docker",
+    "args": [
+      "build", "-t", "gcr.io/playnet-gce/docker-taiga-frontend", "."
+    ]
+  }],
+  "images": [
+    "gcr.io/playnet-gce/docker-taiga-frontend"
+  ]
+}
